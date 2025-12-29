@@ -62,7 +62,7 @@ export const apiService = {
 
     register: (body) => api.post('/auth/register', body),   // 회원가입
 
-    forgetPassword: (body) => api.post('/auth/forgot-password', body), // 비밀번호 재설정 요청
+    forgotPassword: (body) => api.post('/auth/forgot-password', body), // 비밀번호 재설정 요청
 
     resetPassword: (body) => api.post('/auth/reset-password', body), // 비밀번호 재설정
 
