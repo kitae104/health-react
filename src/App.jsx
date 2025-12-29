@@ -6,6 +6,7 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import DoctorRegister from "./pages/DoctorRegister"
 import ForgotPassword from "./pages/ForgotPassword"
+import ResetPassword from "./pages/ResetPassword"
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/register-doctor" element={<DoctorRegister />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
 
             </Routes>
             <Footer />
