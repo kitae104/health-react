@@ -10,6 +10,8 @@ import ResetPassword from "./pages/ResetPassword"
 import Profile from "./pages/Profile"
 import UpdateProfile from "./pages/UpdateProfile"
 import UpdatePassword from "./pages/UpdatePassword"
+import BookAppointment from "./pages/BookAppointment"
+import MyAppointments from "./pages/MyAppointments"
 
 function App() {
 
@@ -30,9 +32,12 @@ function App() {
                 {/* 환자용 라우터 */}
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/update-profile" element={<UpdateProfile />} />
+                <Route path="/book-appointment" element={<BookAppointment />} />
+                <Route path="/my-appointments" element={<MyAppointments />} />
+
+
+                {/* 환자 & 의사 라우터 */}
                 <Route path="/update-password" element={<UpdatePassword />} />
-
-
             </Routes>
             <Footer />
         </BrowserRouter>
