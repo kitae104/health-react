@@ -78,7 +78,7 @@ export const apiService = {
         const formData = new FormData();
         formData.append('file', file);
 
-        return api.post('/users/profile-picture', formData, {
+        return api.put('/users/profile-picture', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
@@ -96,7 +96,7 @@ export const apiService = {
 
     getAllGenotypeEnums: () => api.get('/patients/genotypes'), // 모든 유전자형 열거형 조회
 
-    getAllBloodGroupEnums: () => api.get('/patients/blood-groups'), // 모든 혈액형 열거형 조회
+    getAllBloodGroupEnums: () => api.get('/patients/bloodgroup'), // 모든 혈액형 열거형 조회
 
     
     //==================================
