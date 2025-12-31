@@ -212,12 +212,12 @@ const DoctorProfile = () => {
                             <h2 className="section-title">전문 정보</h2>
                             <div className="info-grid">
                                 <div className="info-item">
-                                        <label className="info-label">이름</label>
-                                        <div className="info-value">{doctorData.firstName || '제공되지 않음'}</div>
-                                </div>
-                                <div className="info-item">
                                         <label className="info-label">성</label>
                                         <div className="info-value">{doctorData.lastName || '제공되지 않음'}</div>
+                                </div>
+                                <div className="info-item">
+                                        <label className="info-label">이름</label>
+                                        <div className="info-value">{doctorData.firstName || '제공되지 않음'}</div>
                                 </div>
                                 <div className="info-item">
                                         <label className="info-label">전문 분야</label>
