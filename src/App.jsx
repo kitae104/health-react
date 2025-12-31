@@ -12,6 +12,8 @@ import UpdateProfile from "./pages/UpdateProfile"
 import UpdatePassword from "./pages/UpdatePassword"
 import BookAppointment from "./pages/BookAppointment"
 import MyAppointments from "./pages/MyAppointments"
+import ConsultationHistory from "./pages/ConsultationHistory"
+import { DoctorsAndPatientsRoute, PatientsOnlyRoute } from "./services/Guard"
 
 function App() {
 
@@ -30,14 +32,19 @@ function App() {
                 <Route path="/reset-password" element={<ResetPassword />} />
 
                 {/* 환자용 라우터 */}
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/update-profile" element={<UpdateProfile />} />
-                <Route path="/book-appointment" element={<BookAppointment />} />
-                <Route path="/my-appointments" element={<MyAppointments />} />
-
+                <Route path="/profile" element={<PatientsOnlyRoute element={<Profile />} />} />
+                <Route path="/update-profile" element={<PatientsOnlyRoute element={<UpdateProfile />} />} />
+                <Route path="/book-appointment" element={<PatientsOnlyRoute element={<BookAppointment />} />} />
+                <Route path="/my-appointments" element={<PatientsOnlyRoute element={<MyAppointments />} />} />
+                <Route path="/consultation-history" element={<PatientsOnlyRoute element={<ConsultationHistory />} />} />
 
                 {/* 환자 & 의사 라우터 */}
-                <Route path="/update-password" element={<UpdatePassword />} />
+                <Route path="/update-password" element={<DoctorsAndPatientsRoute element={<UpdatePassword />} />} />
+
+                {/* 의사용 라우터 */}
+
+                {/* 모두 접근 가능한 라우터 */}
+                <Route path="*" element={<Home />} />
             </Routes>
             <Footer />
         </BrowserRouter>
