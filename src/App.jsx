@@ -13,9 +13,12 @@ import UpdatePassword from "./pages/UpdatePassword"
 import BookAppointment from "./pages/BookAppointment"
 import MyAppointments from "./pages/MyAppointments"
 import ConsultationHistory from "./pages/ConsultationHistory"
-import { DoctorsAndPatientsRoute, PatientsOnlyRoute } from "./services/Guard"
+import { DoctorsAndPatientsRoute, DoctorsOnlyRoute, PatientsOnlyRoute } from "./services/Guard"
 import DoctorProfile from "./pages/doctors/DoctorProfile"
 import UpdateDoctorProfile from "./pages/doctors/UpdateDoctorProfile"
+import DoctorAppointments from "./pages/doctors/DoctorAppointments"
+import CreateConsultation from "./pages/doctors/CreateConsultation"
+import PatientConsultationHistory from "./pages/doctors/PatientConsultationHistory"
 
 function App() {
 
@@ -44,10 +47,12 @@ function App() {
                 <Route path="/update-password" element={<DoctorsAndPatientsRoute element={<UpdatePassword />} />} />
 
                 {/* 의사용 라우터 */}
-                <Route path="/doctor/profile" element={<DoctorsAndPatientsRoute element={<DoctorProfile />} />} />
-                <Route path="/doctor/update-profile" element={<DoctorsAndPatientsRoute element={<UpdateDoctorProfile />} />} />
+                <Route path="/doctor/profile" element={<DoctorsOnlyRoute element={<DoctorProfile />} />} />
+                <Route path="/doctor/update-profile" element={<DoctorsOnlyRoute element={<UpdateDoctorProfile />} />} />
+                <Route path="/doctor/appointments" element={<DoctorsOnlyRoute element={<DoctorAppointments />} />} />
+                <Route path="/doctor/create-consultation" element={<DoctorsOnlyRoute element={<CreateConsultation />} />} />
+                <Route path="/doctor/patient-consultation-history" element={<DoctorsOnlyRoute element={<PatientConsultationHistory />} />} />
                 
-
                 {/* 모두 접근 가능한 라우터 */}
                 <Route path="*" element={<Home />} />
             </Routes>
