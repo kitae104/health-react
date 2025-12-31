@@ -14,6 +14,8 @@ import BookAppointment from "./pages/BookAppointment"
 import MyAppointments from "./pages/MyAppointments"
 import ConsultationHistory from "./pages/ConsultationHistory"
 import { DoctorsAndPatientsRoute, PatientsOnlyRoute } from "./services/Guard"
+import DoctorProfile from "./pages/doctors/DoctorProfile"
+import UpdateDoctorProfile from "./pages/doctors/UpdateDoctorProfile"
 
 function App() {
 
@@ -42,6 +44,9 @@ function App() {
                 <Route path="/update-password" element={<DoctorsAndPatientsRoute element={<UpdatePassword />} />} />
 
                 {/* 의사용 라우터 */}
+                <Route path="/doctor/profile" element={<DoctorsAndPatientsRoute element={<DoctorProfile />} />} />
+                <Route path="/doctor/update-profile" element={<DoctorsAndPatientsRoute element={<UpdateDoctorProfile />} />} />
+                
 
                 {/* 모두 접근 가능한 라우터 */}
                 <Route path="*" element={<Home />} />
