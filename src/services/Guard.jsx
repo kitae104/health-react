@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { apiService } from "./api"; 
 
-export const PatientsOnyRoute = ({element: Component}) => {
+export const PatientsOnlyRoute = ({element: Component}) => {
     return apiService.isPatient() ? (
         Component
     ): (
